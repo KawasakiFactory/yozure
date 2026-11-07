@@ -227,13 +227,17 @@ select.btn{ padding-right:34px; appearance:none; -webkit-appearance:none;
 .m-btn small{ display:block; font-family:"Zen Kaku Gothic New",sans-serif; font-size:22px; color:inherit; opacity:.75; margin-top:2px; }
 .m-btn.primary{ color:var(--ink); background:linear-gradient(#f3d768,#d9a92a); border-color:transparent; }
 .m-btn:focus-visible, .m-seg button:focus-visible{ outline:4px solid var(--lantern); outline-offset:3px; }
-/* 予約ボタン：外部の予約フォームへ（新しいタブ） */
-.m-btn.reserve{ display:flex; flex-direction:column; align-items:center; justify-content:center; box-sizing:border-box; min-height:104px; padding:10px 20px;
-  font-size:38px; line-height:1.25; text-align:center; text-decoration:none; color:#fff4e8; background:linear-gradient(#c43a32,#8f1f22); border-color:#e06a52; }
-.m-btn.reserve:hover{ filter:brightness(1.1); }
-#viewport.lang-en .m-btn.reserve{ font-size:34px; }
-.m-btn.reserve.big{ min-height:140px; font-size:46px; }
-#viewport.lang-en .m-btn.reserve.big{ font-size:40px; }
+/* 公式サイトへのリンク（新しいタブ）と、出版検討メーカー向けの連絡先 */
+.m-btn.site{ display:flex; align-items:center; justify-content:center; box-sizing:border-box; min-height:84px; padding:8px 20px;
+  font-size:38px; text-align:center; text-decoration:none; border-color:#8a7350; }
+.m-btn.site:hover{ border-color:var(--lantern); }
+#viewport.lang-en .m-btn.site{ font-size:34px; }
+.m-btn.site.big{ min-height:112px; font-size:44px; }
+#viewport.lang-en .m-btn.site.big{ font-size:40px; }
+.m-pub{ max-width:1500px; font-size:24px; line-height:1.5; color:#e6dcc6; text-align:center; text-shadow:0 1px 3px rgba(0,0,0,.9), 0 0 10px rgba(0,0,0,.6);
+  user-select:text; -webkit-user-select:text; }
+.m-pub a{ color:var(--lantern); }
+.overlay.after .m-pub{ font-size:28px; }
 .overlay.after{ z-index:72; }
 .overlay.after .mpanel{ gap:28px; }
 .a-msg{ font-size:34px; color:var(--paper); text-shadow:0 2px 6px rgba(0,0,0,.8); }
@@ -418,7 +422,8 @@ select.btn{ padding-right:34px; appearance:none; -webkit-appearance:none;
       <div class="mpanel">
         <div class="m-logo" role="img" aria-label="夜連"></div>
         <div class="a-msg"><span class="ja">遊んでいただき、ありがとうございました。</span><span class="en">Thank you for playing.</span></div>
-        <a class="m-btn reserve big" href="https://t.co/d1M0dg75AE" target="_blank" rel="noopener"><span class="ja">ゲームマーケット当日・<br>会場受け取り予約をする</span><span class="en">Reserve a copy to pick up<br>at Game Market</span></a>
+        <a class="m-btn site big" href="https://www.kawasakifactory.com/" target="_blank" rel="noopener"><span class="ja">カワサキファクトリー公式サイト</span><span class="en">Kawasaki Factory official site</span></a>
+        <div class="m-pub"><span class="ja">このゲームの出版をお考えのメーカーの方は、<a href="mailto:kawasakifactory.bg@gmail.com">kawasakifactory.bg@gmail.com</a>にご連絡ください。</span><span class="en">Publishers interested in this game, please contact us at <a href="mailto:kawasakifactory.bg@gmail.com">kawasakifactory.bg@gmail.com</a>.</span></div>
         <button class="m-btn" id="btnPlayAgain"><span class="ja">もう一度遊ぶ</span><span class="en">Play again</span><small id="playAgainNote"></small></button>
         <div class="m-links"><button class="btn" id="btnAfterMenu"><span class="ja">メニューへ</span><span class="en">Menu</span></button></div>
       </div>
@@ -436,7 +441,8 @@ select.btn{ padding-right:34px; appearance:none; -webkit-appearance:none;
         </div>
         <button class="m-btn primary" id="btnTutorial"><span class="ja">説明付きで遊ぶ</span><span class="en">Play with tutorial</span><small><span class="ja">場面ごとにルールを説明します</span><span class="en">Rules are explained as they come up</span></small></button>
         <button class="m-btn" id="btnPlain"><span class="ja">説明無しで遊ぶ</span><span class="en">Play without tutorial</span></button>
-        <a class="m-btn reserve" href="https://t.co/d1M0dg75AE" target="_blank" rel="noopener"><span class="ja">ゲームマーケット当日・<br>会場受け取り予約をする</span><span class="en">Reserve a copy to pick up<br>at Game Market</span></a>
+        <a class="m-btn site" href="https://www.kawasakifactory.com/" target="_blank" rel="noopener"><span class="ja">カワサキファクトリー公式サイト</span><span class="en">Kawasaki Factory official site</span></a>
+        <div class="m-pub"><span class="ja">このゲームの出版をお考えのメーカーの方は、<a href="mailto:kawasakifactory.bg@gmail.com">kawasakifactory.bg@gmail.com</a>にご連絡ください。</span><span class="en">Publishers interested in this game, please contact us at <a href="mailto:kawasakifactory.bg@gmail.com">kawasakifactory.bg@gmail.com</a>.</span></div>
         <div class="m-links"><button class="btn" id="btnMenuRules"><span class="ja">ルール</span><span class="en">Rules</span></button><button class="btn" id="btnLang">言語・Language</button><button class="btn" id="btnContinue" hidden><span class="ja">対戦に戻る</span><span class="en">Back to game</span></button></div>
         <div class="m-credit"><span class="ja">ゲームデザイン：川﨑晋・場咲工　アートワーク：竹﨑でめこ　プロデュース：yas-o<br>制作：カワサキファクトリー　</span><span class="en">Game design: Susumu Kawasaki, Kou Jousaki　Artwork: Demeko Takezaki　Producer: yas-o<br>Published by Kawasaki Factory　</span><a href="https://www.kawasakifactory.com/" target="_blank" rel="noopener">www.kawasakifactory.com</a></div>
       </div>
